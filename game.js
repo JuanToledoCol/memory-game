@@ -5,14 +5,14 @@ let iconos = []
 let selecciones = []
 
 let cantidadTarjetas = 18;
-if(!localStorage.getItem('cantidadTarjetas')) {
+if (!localStorage.getItem('cantidadTarjetas')) {
     localStorage.setItem('cantidadTarjetas', cantidadTarjetas);
 } else {
     cantidadTarjetas = localStorage.getItem('cantidadTarjetas');
 }
 
-let maxIntentos = 28;
-if(!localStorage.getItem('maxIntentos')) {
+let maxIntentos = 12;
+if (!localStorage.getItem('maxIntentos')) {
     localStorage.setItem('maxIntentos', maxIntentos);
 } else {
     maxIntentos = localStorage.getItem('maxIntentos');
@@ -21,7 +21,7 @@ if(!localStorage.getItem('maxIntentos')) {
 let intentos = 0;
 let puntos = 0;
 
-let titulo = 'Juego de Memoria'
+let titulo = ''
 if (!localStorage.getItem('titulo')) {
     localStorage.setItem('titulo', titulo);
 } else {
@@ -62,21 +62,21 @@ document.getElementById('fondo').onchange = function (e) {
 function cargarImagenes() {
     image = [
 /*Línea 64 */'<img src="./image/1.gif">',
-            '<img src="./image/2.gif">',
-            '<img src="./image/3.gif">',
-            '<img src="./image/4.gif">',
-            '<img src="./image/5.gif">',
-            '<img src="./image/6.gif">',
-            '<img src="./image/7.gif">',
-            '<img src="./image/8.gif">',
-            '<img src="./image/9.gif">',
-            '<img src="./image/10.gif">',
-            '<img src="./image/11.gif">',
-            '<img src="./image/12.gif">',
-            '<img src="./image/13.gif">',
-            '<img src="./image/14.gif">'
+        '<img src="./image/2.gif">',
+        '<img src="./image/3.gif">',
+        '<img src="./image/4.gif">',
+        '<img src="./image/5.gif">',
+        '<img src="./image/6.gif">',
+        '<img src="./image/7.gif">',
+        '<img src="./image/8.gif">',
+        '<img src="./image/9.gif">',
+        '<img src="./image/10.gif">',
+        '<img src="./image/11.gif">',
+        '<img src="./image/12.gif">',
+        '<img src="./image/13.gif">',
+        '<img src="./image/14.gif">'
     ]
-    image.sort(function() {return Math.random()- 0.5});
+    image.sort(function () { return Math.random() - 0.5 });
 }
 
 //Aqui puedes cambiar la imagen principal
@@ -124,8 +124,7 @@ function seleccionarTarjeta(i) {
     if (selecciones.length == 2) {
         deseleccionar(selecciones)
         selecciones = []
-        intentos++
-        document.getElementById("intentos").innerHTML = intentos
+
     }
 }
 
@@ -138,16 +137,34 @@ function deseleccionar(selecciones) {
             let tarjeta2 = document.getElementById("tarjeta" + selecciones[1])
             tarjeta1.style.transform = "rotateY(0deg)"
             tarjeta2.style.transform = "rotateY(0deg)"
+            intentos++
+            document.getElementById("intentos").innerHTML = intentos
         } else {
             trasera1.style.background = "plum"
             trasera2.style.background = "plum"
+            if (intentos === maxIntentos - 1) {
+                Swal.fire({
+                    title: 'Ufff!, casi...',
+                    text: 'Te ganaste un intento extra',
+                    confirmButtonText: 'Jugar de nuevo',
+                    confirmButtonColor: '#15eb18',
+                    allowOutsideClick: false
+                }).then((result) => {
+                    if (result.isConfirmed) {
+                        intentos = maxIntentos - 1
+                    }
+                })
+            }else{
+                intentos++
+                document.getElementById("intentos").innerHTML = intentos
+            }
             puntos += 5
             document.getElementById("puntos").innerHTML = puntos
         }
 
         if (intentos == maxIntentos) {
             swal.fire({
-                title: "¡Perdiste! Llegaste a "+ maxIntentos +" intentos.",
+                title: "¡Perdiste! Llegaste a " + maxIntentos + " intentos.",
                 text: "No completaste el juego. Acumulaste " + puntos + " puntos.",
                 icon: "error",
                 confirmButtonText: "Jugar de nuevo",
@@ -163,7 +180,7 @@ function deseleccionar(selecciones) {
         if (verificar()) {
             swal.fire({
                 title: "¡Ganaste!",
-                text: "Completaste el juego en " + intentos + " intentos. Acumulaste " + puntos + " puntos.",
+                text: "Acumulaste " + puntos + " puntos.",
                 icon: "success",
                 confirmButtonText: "Jugar de nuevo",
                 confirmButtonColor: "#15eb18",
@@ -186,6 +203,10 @@ function verificar() {
     }
     return true
 }
+//verificar que intento para dar otra oportunidad
+function verificarIntento() {
+
+}
 
 
 // Cambio Titulo
@@ -197,10 +218,11 @@ document.getElementById('icon').onclick = async () => {
         showCancelButton: true,
         allowOutsideClick: false,
         inputValidator: (value) => {
-            if (!value) {
-                return '¡Debes escribir algo!'
+            if(value == ''){
+              document.getElementById('title').innerHTML = '';
+              localStorage.setItem('titulo', '');
             }
-        }
+          }
     })
 
     if (title) {
