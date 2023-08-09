@@ -1,0 +1,64 @@
+Para que el programa funcione adecuadamente tenga en cuenta los siguiente puntos.
+
+Para que el programa funcione bien en cualquier dispositivo la primera vez
+que abra la aplicación debe tener acceso a internet.
+Luego de que ya este abierto puede quitar el internet.
+
+-Debe tener ubicada la carpeta ya sea en pc o dispositivos moviles, por ejemplo yo tengo la carpeta ubicada en "C:\Users\juan9\Documents\JuegoDeMemoria" en el computador
+y en el celular esta en "Almacenamiento-Interno\JuegoDeMemoria ".
+
+Una vez ubicada la carpeta debemos tener en cuenta:
+
+1. Ejecutar el programa en PC
+    a. Verificar el acceso a internet(Esto solo para que cargen en cache las alertas)
+    b. Si desea puede desactivar el internet(ya no le consumira recursos).
+    c. Dar click derecho sobre el archivo "index.html"
+    d. Abrir con-> Google Chrome
+    !Listo¡ Ya puede disfrutar del juego.
+
+2. Ejecutar el programa en Dispositivo movil (tablet o celular)
+    a. Descargue la aplicaci+on "Gestor de archivos+"
+    o ingrese a este link https://play.google.com/store/apps/details?id=com.alphainventor.filemanager
+    b. Navegue hasta la ubicación de la carpeta (tenga en cuenta donde copio y pego el juego)
+    c. haga click sobre el archivo "index.html"
+    d. Seleccione abrir con Google Chrome
+    !Listo¡ Ya puede disfrutar del juego.
+------------------------------------------------------
+******************************************************
+------------------------------------------------------
+Para cambiar foto del juego:
+
+1. En la carpeta "image" se encuentran las imagenes del juego. Aquí debe almacenar las imagenes para mostrar.
+2. Para cambiar la imagen del juego debe tener en cuenta que la imagen debe ser cuadrada.
+
+3. Cambiar la imagen principal (la que se muestra antes de voltear la carta).
+    a. En la carpeta "image" debe copiar la imagen que desea mostrar.
+    b. Debe renombrar la imagen como "principal.jpg" o "dorso.jpg"
+    c. Debe ir al archivo "game.js" y buscar la linea 119.
+    d. En la linea 119 debe cambiar el nombre de la imagen en la etiqueta <img src="Aquí va la ruta"/>
+    en nuestro caso sería así:
+    ej: <img src="./image/ponga_aqui_el_nombre_de_laImagen.jpg">
+    e. Guardar los cambios.
+
+    Nota: Al renombrar la imagen no use espacios en blanco, ni caracteres especiales. si quiere remplace los espacios
+    por guiones bajos o guiones medios.
+
+4. Cambiar la imagen del respaldo(la que se muestra al volear la carta).
+
+    a.Antes de cambiar las imagenes asegurate de que sean cuadradas y que tengan el mismo tamaño.
+    b.Si no sabes como hacerlo puedes usar el siguiente link: https://www.iloveimg.com/es/cambiar-tamaño-de-imagen
+    c.Ten en cuenta el nombre de las imagenes, procura que no tengan nungun espacio en blanco
+        y que no tengan caracteres especiales como: ñ, acentos, guiones etc.
+    d.La recomendación es que le ponga por ejemplo 1.jpg, 2.jpg, 3.jpg etc.
+    e.Tambien asegurese que todas las imagenes esten en la carpeta "image" que esta en este mismo directorio
+    f.Ahora debe ir al archivo "game.js" y buscar la linea 64.
+    g.En la linea 64 debe cambiar el nombre de la imagen en la etiqueta <img src="Aquí va la ruta"/>
+    en nuestro caso sería así:
+    ej: <img src="./image/ponga_aqui_el_nombre_de_laImagen.jpg">
+    h. Haga esto con todas las imagenes que quiere que parezcan en el juego. y elimine todas las demás.
+    i. Guardar los cambios.
+
+
+Nota: No toque nada del codigo aparte de lo mencionado antes o se arrepentirá.
+
+Contácto: jupabeto@gmail.com

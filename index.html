@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Link to the CSS file -->
+    <link rel="stylesheet" href="style.css">
+    <!-- Link to the sweet alert library -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.all.min.js"></script>
+    <link href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.1/dist/sweetalert2.min.css" rel="stylesheet">
+    <title>Memoria</title>
+</head>
+
+<body id="body">
+    <div class="colores">
+        <input type="color" name="fondo" id="fondo">
+        <img id="icon" src="./icons/gears-solid.svg" />
+        <img id="icon2" src="./icons/eye-solid.svg" />
+    </div>
+
+    <!-- The game board -->
+    <div class="container_tablero">
+        <h1 class="title_game">Concéntrese Digital</h1>
+        <h1 class="title" id="title"></h1>
+        <br>
+        <div id="tablero">
+        </div>
+    </div>
+    <div class="botones">
+        <div class="puntos bg">
+            <p>Puntos: <span id="puntos">0</span></p>
+        </div>
+        <div class="nuevo-juego bg" onclick="generarTablero()">
+            Reinciar
+        </div>
+        <div class="intentos bg" id="container_intentos">
+            <p>Intentos: <span id="intentos">0</span></p>
+        </div>
+    </div>
+
+    <br>
+
+    <footer class="footer">
+        <p>Derechos reservados® Máximus Producciones 3212089000.</p>
+    </footer>
+
+    <!-- The game script -->
+    <script src="game.js"></script>
+</body>
+
+</html>
