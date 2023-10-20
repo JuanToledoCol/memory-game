@@ -61,20 +61,20 @@ document.getElementById('fondo').onchange = function (e) {
 
 function cargarImagenes() {
     image = [
-/*Línea 64 */'<img src="./image/1.gif">',
-        '<img src="./image/2.gif">',
-        '<img src="./image/3.gif">',
-        '<img src="./image/4.gif">',
-        '<img src="./image/5.gif">',
-        '<img src="./image/6.gif">',
-        '<img src="./image/7.gif">',
-        '<img src="./image/8.gif">',
-        '<img src="./image/9.gif">',
-        '<img src="./image/10.gif">',
-        '<img src="./image/11.gif">',
-        '<img src="./image/12.gif">',
-        '<img src="./image/13.gif">',
-        '<img src="./image/14.gif">'
+/*Línea 64 */'<img src="./image/1.jpg">',
+        '<img src="./image/2.jpg">',
+        '<img src="./image/3.jpg">',
+        '<img src="./image/4.jpg">',
+        '<img src="./image/5.jpg">',
+        '<img src="./image/6.jpg">',
+        '<img src="./image/7.jpg">',
+        '<img src="./image/8.jpg">',
+        '<img src="./image/9.jpg">',
+        '<img src="./image/10.jpg">',
+        '<img src="./image/11.jpg">',
+        '<img src="./image/12.jpg">',
+        '<img src="./image/13.jpg">',
+        '<img src="./image/14.jpg">'
     ]
     image.sort(function () { return Math.random() - 0.5 });
 }
@@ -97,7 +97,7 @@ function generarTablero() {
                 <div class="cara superior">
 
                     <!-- Cambiar la imagen principal -->
-<!-- Línea 119-->   <img src="./image/dorso.gif">
+<!-- Línea 100-->   <img src="./image/dorso.jpg">
 
                 </div>
             </div>

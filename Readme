@@ -35,7 +35,7 @@ Para cambiar foto del juego:
     a. En la carpeta "image" debe copiar la imagen que desea mostrar.
     b. Debe renombrar la imagen como "principal.jpg" o "dorso.jpg"
     c. Debe ir al archivo "game.js" y buscar la linea 119.
-    d. En la linea 119 debe cambiar el nombre de la imagen en la etiqueta <img src="Aquí va la ruta"/>
+    d. En la linea 100 debe cambiar el nombre de la imagen en la etiqueta <img src="Aquí va la ruta"/>
     en nuestro caso sería así:
     ej: <img src="./image/ponga_aqui_el_nombre_de_laImagen.jpg">
     e. Guardar los cambios.
